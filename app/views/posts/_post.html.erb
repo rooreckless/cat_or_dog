@@ -3,7 +3,7 @@
   <%= link_to(image_tag(post.image.url,class:'one_post--img'),post_path(post.id))%>
   <div class='one_post__info'>
     <p>点数 : <%=Score.return100score(score.probabilityup)%>点<p>
-    <p>投稿日時 : <%=post.created_at.strftime('%Y年%m月%d日 %H:%M:%S')%><p>
+    <p>投稿日時 : <%=post.created_at.to_s(:datetime_jp)%><p>
     <%= link_to(post.user.nickname,user_path(post.user.id))%>
     <%= link_to('この画像の詳細を表示する',post_path(post.id))%>
   </div>

@@ -1,7 +1,7 @@
 <div class="show-outer">
   <div class="show-post">
     <div class="postDate">
-      <p>投稿日時 : <%= @post.created_at %></p>
+      <p>投稿日時 : <%= @post.created_at.to_s(:datetime_jp) %></p>
     </div>
     <div class="postAuthor">
       <p>投稿者 : <%= @post.user.nickname %></p>
