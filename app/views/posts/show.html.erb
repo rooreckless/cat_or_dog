@@ -1,0 +1,29 @@
+<div class="show-outer">
+  <div class="show-post">
+    <div class="postDate">
+      <p>投稿日時 : <%= @post.created_at %></p>
+    </div>
+    <div class="postAuthor">
+      <p>投稿者 : <%= @post.user.nickname %></p>
+    </div>
+    <div class="post_scoretable">
+      <p><%=@score.labelup%> である確率 <%=@score.probabilityup%></p>
+      <p><%=@score.labeldown%> である確率 <%=@score.probabilitydown%></p>
+      <p>点数 : <%=@score_transed%>点</p>
+    </div>
+    <% if (user_signed_in? && (current_user.id == @post.user_id))  %>
+    <div class="postManage">
+    <!-- <%= link_to "ç·¨é›†", edit_post_path(@post.id), class: "postManage__edit" %> -->
+      <%= link_to "この投稿を削除しますか？", post_path(@post.id), method: :delete%>
+    </div>
+    <% end %>
+    
+      <%=image_tag(@post.image.url,class: 'show-post__img')%>
+    <p>投稿時のメッセージ</p>
+    <div class="show-post__text">
+      
+      <%= simple_format @post.text %>
+      
+    </div>
+  </div>
+</div>

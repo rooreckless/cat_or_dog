@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CatOrDog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
+  </head>
+
+  <body>
+    <div class='header'>
+      <div class='header__left'>
+        <h1>Cat Or Dog</h1><h3>「犬 とも 猫 とも判断できない画像」ほど高得点です。ログインして画像を投稿してみよう。</h3>
+      </div>
+      <div class='header__right'>
+        <% if user_signed_in? %>
+            <p class='header__right__nickname'>ユーザ名:<%= link_to(current_user.nickname,user_path(current_user.id))%></p>
+            <%= link_to('Topへ戻る',root_path, class: 'header__right__logoutbtn btn')%>
+            <%= link_to('画像を投稿する',new_post_path, class: 'header__right__postbtn btn')%>
+            <%= link_to('ログアウト',destroy_user_session_path, method: :delete, class: 'header__right__logoutbtn btn')%>
+        <% else %>
+            <p class='header__right__nickname'>ログインしていません</p>
+            <%= link_to('ログインする',new_user_session_path, class: 'header__right__loginbtn btn')%>
+        <% end %>
+      </div>
+    </div>
+    <div class='notification'>
+      <%if flash%>
+        <p><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
+    <%= yield %>
+    <div class='footer'>
+      <small>このページでは<a href="https://nanonets.com/">https://nanonets.com/</a>のapiを使用しています。</small>
+    </div>
+  </body>
+</html>

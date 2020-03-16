@@ -1,0 +1,29 @@
+<div class='outer_box'>
+  <div class='left_box'>
+    <p class='all_box--title'>全ての投稿</p>
+    <div class='all_box'>
+        <% @allposts.each do |post| %>
+          <!---部分テンプレート_post.html.erbを使用します。テンプレート内の変数post:にはeach文のブロックパラメータpostを当てます。-->
+          <%= render partial: "post", locals: { post: post,score: @allscores.find_by(post_id: post.id)} %>
+        <% end %>
+    </div>
+  </div>
+  <div class='center_box'>
+    <p class='weekly_box--title'>今週の投稿</p>
+    <div class='weekly_box'>  
+        <% @weeklyposts.each do |post| %>
+          <!---部分テンプレート_post.html.erbを使用します。テンプレート内の変数post:にはeach文のブロックパラメータpostを当てます。-->
+          <%= render partial: "post", locals: { post: post,score: @weeklyscores.find_by(post_id: post.id)} %>
+        <% end %>
+    </div>
+  </div>
+  <div class='right_box'>
+    <p class='regend_box--title'>点数の上位3つの投稿</p>
+    <div class='regendrank_box'>
+      <% @regendscores.each do |score| %>
+          <!---部分テンプレート_post.html.erbを使用します。テンプレート内の変数post:にはeach文のブロックパラメータpostを当てます。-->
+          <%= render partial: "post", locals: { post: @allposts.find_by(id: score.post_id),score: score} %>
+        <% end %>
+    </div>
+  </div>
+</div>

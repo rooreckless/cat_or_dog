@@ -1,0 +1,11 @@
+<div class="user-show-outer">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <div class="user-show-post">
+  
+
+ <% @posts.each do |post| %>
+  <!---以下の内容はtweets/index.html.erbに同じなので部分テンプレートtweet/_tweets.html.erbに持っていきます。-->
+    <%= render partial: "posts/post", locals: { post: post ,score: @scores.find_by(post_id: post.id)} %>
+  <% end %>
+  </div>
+</div>

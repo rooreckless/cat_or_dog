@@ -1,0 +1,12 @@
+<div class="new-outer">
+  <div class="formcontainer">
+    <%= form_with model: @post, class: :form, local: true do |form| %>
+          <h3>投稿する</h3>
+          <p>画像はjpg、pngに対応しています。ファイル名に2byte文字を含まないようにしてください。</p>
+          <!--以下の部分はedit.html.erbと同じなので_form.html.erbの部分テンプレートにあります。formの入力部分です-->
+          <%=render partial: "form", locals: {form: form}%>
+          <!--renderの引数はハッシュのキー見たいに考えましょう、partilalキーには文字列、localsキーにはまたハッシュみたいに-->
+
+    <% end %>
+  </div>
+</div>

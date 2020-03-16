@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+.header{
+  width:100%;
+  height:100px;
+  background-color: cornflowerblue;
+  display:flex;
+  justify-content: space-between;
+  &__left{
+    h1{
+      color:white;
+      font-size: 2.5em;
+    }
+    > h3{
+      color:white;
+      font-size: 1.5em;
+    }
+  }
+  &__right{
+    height:100px;
+    width:30%;
+    display:flex;
+    justify-content: space-evenly;
+    & .btn{
+      display:block;
+      font-size: 1em;
+      margin:25px 25px;
+      border-radius: 10px;
+      border:2px solid;
+      background-color: white;
+      text-decoration: none;
+      padding:5px;
+    }
+
+    &__postbtn{
+      color:green;
+      border-color: greenyellow;
+    }
+    &__loginbtn,&__logoutbtn{
+      color:orangered;
+      border-color: orangered;
+    }
+    &__nickname{
+      display:block;
+      color:white;
+      font-weight: bold;
+    }
+  }
+}
+.outer_box{
+  width:100%;
+  height:calc(100vh - 120px);
+  background-color: #e0e0e0;
+  display:flex;
+  justify-content: space-around;
+  .left_box , .center_box , .right_box{
+    width:30%;
+    height:calc(100vh - 120px);
+  }
+  .all_box--title,.weekly_box--title , .regend_box--title{
+    color:white;
+    background-color:cornflowerblue;
+    width:50%;
+    display:inline-block;
+    margin:3px auto 3px auto;
+  }
+  .all_box , .weekly_box , .regendrank_box{
+    
+    height:calc(100vh - 170px);
+    border: 1px solid black;
+    background-color: white;
+    overflow: scroll;
+    // &__posts{
+      .one_post{
+      border-radius: 5px;
+      border-top: #e0e0e0 3px solid;
+      border-bottom: #e0e0e0 3px solid;
+      display:flex;
+      justify-content: space-between;
+      &--img{
+        margin-left: 10%;
+        width:50%;
+        display:block;
+      }
+      &__info{
+        margin-right: 20%;
+        &--user{
+          display:block;
+        }
+      }
+    }
+  }
+}
+// 以下は投稿画面内
+.formcontainer{
+  width:50%;
+  margin:0 auto;
+  padding:0 auto;
+  border:5px solid black;
+  display: block;
+}
+.show-outer , .new-outer{
+  width:100%;
+  height:calc(100vh - 120px);
+  background-color: #e0e0e0;
+  
+  .show-post{
+    width:70%;
+    margin:0 auto 0 auto;
+    background-color: white;
+    &__img{
+      
+    }
+    &__text{
+      width:70%;
+      border:1px solid black;
+    }
+  }
+}
+.user-show-outer{
+  width:100%;
+  height:calc(100vh - 120px);
+  background-color: #e0e0e0;
+  .user-show-post{
+    width:70%;
+    height:calc(100vh - 120px);
+    margin:0 auto 0 auto;
+    overflow: scroll;
+    background-color: white;
+    .one_post--img{
+      margin-left: 10%;
+      width:20%;
+      display:block;
+    }
+  }
+}
+.footer{
+  background-color: cornflowerblue;
+  
+  text-align: center;
+  display:float;
+  height:20px;
+  width:100%;
+  bottom:0px;
+  a{
+    text-decoration: none;
+    color:white;
+  }
+  
+}
