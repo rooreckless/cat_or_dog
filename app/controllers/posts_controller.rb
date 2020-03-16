@@ -16,8 +16,8 @@ class PostsController < ApplicationController
     puts "@weeklyposts.class = #{@weeklyposts.class}"
     puts "(@weeklyposts)[0].class = #{(@weeklyposts)[0].class}"
     @weeklyscores = Score.returnscores(@weeklyposts)
-    puts "@numberonescore= #{@allscores.order("probabilityup ASC").limit(3)[0].probabilityup}"
-    puts "@numberonescore= #{@allscores.order("probabilityup ASC").limit(3)[0].post_id}"
+    # puts "@numberonescore= #{@allscores.order("probabilityup ASC").limit(3)[0].probabilityup}"
+    # puts "@numberonescore= #{@allscores.order("probabilityup ASC").limit(3)[0].post_id}"
     @regendscores =@allscores.order("probabilityup ASC").limit(3)
     # binding.pry
   end
