@@ -19,7 +19,7 @@ pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 #capistrano導入に伴い、sharedディレクトリ内にある、sockファイルを読むよう変更。
 
-#エラーのログを記録するファイルを指定
+#エラーのログを記録するファイルを指定bundle exec cap production deploybundle exec cap production deploy
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 #capistrano導入に伴い、sharedディレクトリ内にあるunicorn.stderr.logを読むよう変更。
 
