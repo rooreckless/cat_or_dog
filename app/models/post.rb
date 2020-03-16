@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   #上は、imageカラムの内容(画像)をアップロードするために必要です。(carrierwaveGem)
   def self.returnthisweekposts(allposts)
-    this_week = Date.yesterday.all_week
+    this_week = Date.today.all_week
     #this_week = 今日の週です。範囲オブジェクt=>this_week= 2020-03-09..2020-03-15
     # weeklyposts=allposts.where(created_at: this_week).order("posts.created_at DESC")
     weeklyposts=allposts.where(created_at: this_week)
@@ -34,6 +34,7 @@ class Post < ApplicationRecord
     # puts "@datas[0]=#{@datas[0]}"
     # puts "@datas[0].created_at=#{@datas[0].created_at}"
     puts "allposts.class=#{allposts.class} @weeklyposts.class=#{weeklyposts.class}"
+    # binding.pry
     return weeklyposts
     
   end
